@@ -1,0 +1,29 @@
+<div class="row row-cols-lg-1">
+  <img
+    class="mx-auto"
+    style="width: 200px; height: 200px; margin-top: 30px; border-radius: 100px"
+    [src]="diamond.image"
+    alt=""
+  />
+</div>
+<hr />
+<div class="container">
+  <h2 style="text-align: center"><strong>Name:</strong> {{ diamond.name }}</h2>
+  <br /><br />
+  <p style="text-align: center">
+    <strong>Description: </strong>
+  </p>
+  <p>{{ diamond.description }}</p>
+  <br /><br />
+  <p style="text-align: center">
+    <strong style="margin-right: 5px">Price: </strong>
+    {{ diamond.price | currency : "EUR" }}
+    <button
+      style="border-radius: 3px 20px"
+      (click)="addToCart()"
+      class="btn btn-success"
+    >
+      Buy
+    </button>
+  </p>
+</div>

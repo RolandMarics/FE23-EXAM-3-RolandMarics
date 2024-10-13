@@ -1,0 +1,24 @@
+body{
+    height: 63vh;
+}
+
+.table{
+    text-align: center;  
+}
+
+.container{
+    display: block;
+}
+
+div{
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.final{
+    border: 1px solid black;
+    
+    margin: 5px;
+    
+}

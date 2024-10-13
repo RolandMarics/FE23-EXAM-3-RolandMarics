@@ -1,0 +1,10 @@
+
+div{
+    display:flex ;
+}
+
+p{
+    margin-top: 30px;
+    text-align: center;
+    color: black;
+}

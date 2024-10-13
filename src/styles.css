@@ -1,1 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+
+h1,h2,h3,h4,h5,p,th,td,a,label,input,textarea{
+    font-family: "Dancing Script", cursive;
+}

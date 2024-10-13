@@ -1,0 +1,55 @@
+<body>
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+    @for( diamond of diamonds; track $index){
+
+    <div>
+      <div
+        class="card mx-auto my-5"
+        style="width: 16rem; height: 25rem; border-radius: 30px"
+      >
+        <img
+          style="height: 200px; border-radius: 30px"
+          [src]="diamond.image"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 style="text-align: center" class="card-title">
+            {{ diamond.name }}
+          </h5>
+          <br />
+          <hr />
+
+          <button
+            *ngIf="diamond.availability"
+            style="
+              width: 100%;
+              margin-bottom: 3px;
+              border-radius: 3px 20px;
+              font-family: Dancing Script, cursive;
+            "
+            class="btn btn-success"
+          >
+            Buy
+          </button>
+
+          <a
+            *ngIf="diamond.availability"
+            style="
+              display: block;
+              border-radius: 3px 20px;
+              font-family: Dancing Script, cursive;
+            "
+            routerLink="/details/{{ $index }}"
+            class="btn btn-primary"
+            >details</a
+          >
+        </div>
+        <div *ngIf="!diamond.availability">
+          <p>Not Available</p>
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+</body>

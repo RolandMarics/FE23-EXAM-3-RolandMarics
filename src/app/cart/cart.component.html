@@ -1,0 +1,39 @@
+<body>
+  <table class="table table-striped table-hover my-5">
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>image</th>
+      <th>gtty</th>
+      <th>price</th>
+    </tr>
+
+    @for(diamond of diamondsFromCart; track $index) {
+    <tr>
+      <th>{{ $index }}</th>
+      <td>{{ diamond.name }}</td>
+      <td><img height="40" [src]="diamond.image" alt="" /></td>
+      <td>{{ diamond.gtty }}</td>
+      <td>{{ diamond.price | currency : "EUR" }}</td>
+    </tr>
+    }
+  </table>
+  <div class="container">
+    <div>
+      <p *ngIf="finalTotal" class="text text-center">
+        Final Price: {{ finalTotal | currency : "EUR" }}
+      </p>
+    </div>
+    <div class="final">
+      <p *ngIf="serviceFee" class="text text-center" style="margin-top: 20px">
+        Service: {{ serviceFee | currency : "EUR" }}
+      </p>
+      <p *ngIf="discount > 0" class="text text-center" style="margin-top: 20px">
+        Discount: {{ discount | currency : "EUR" }}
+      </p>
+      <p class="text text-center" style="margin-top: 20px">
+        Total Price: {{ total | currency : "EUR" }}
+      </p>
+    </div>
+  </div>
+</body>
